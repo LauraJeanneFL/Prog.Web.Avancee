@@ -1,0 +1,3 @@
+XAMPP   -> Shell
+        -> phpMyAdmin (gestionnaire de base de données)
+Interface -> WORKBENCH = phpMyAdmin
