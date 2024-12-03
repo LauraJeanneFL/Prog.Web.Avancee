@@ -8,6 +8,8 @@ use App\Providers\Validator;
 class ClientController {
     
     public function index(){
+        echo "abc";
+        die();
        $client = new Client;
 
        $clients = $client->select('name');
@@ -41,12 +43,14 @@ class ClientController {
     }
 
     public function store($data){
-       //print_r($data);
-
+      // print_r($data);
        $validator = new Validator;
-       $validator->field('name', $data['name'], 'Nom')->required()->min(2)->max(10);
-       $validator->field('address', $data['address'], 'ladresse')->required();
-       $validator->field('phone', $data['phone'])->numeric();
+       $validator->field('name', $data['name'])->min(2)->max(10);
+       $validator->field('address', $data['address'])->required();
+       $validator->field('phone', $data['phone'])->required();
+       $validator->field('zip_code', $data['zip_code'], 'Zip Code')->required();
+       $validator->field('email', $data['email'])->required();
+       $validator->field('city_id', $data['city_id'], 'City')->required()->number();
        
        if($validator->isSuccess()){
             $client = new Client;
@@ -59,9 +63,14 @@ class ClientController {
             }
        }else{
         $errors = $validator->getErrors();
-        print_r( $errors);
+        // print_r( $errors);
+        $city = new City;
+        $cities = $city->select('city');
+
+        return View::render('client/create', ['errors'=>$errors, 'inputs'=>$data, 'cities'=>$cities]);
        }
 
     }
 }
 
+?>

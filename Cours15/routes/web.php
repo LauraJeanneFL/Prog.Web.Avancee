@@ -2,7 +2,7 @@
 use App\Routes\Route;
 
 use App\Controllers\HomeController;
-use App\Controllers\ClientController;
+//use App\Controllers\ClientController;
 
 Route::get('/home', 'HomeController@index');
 Route::get('/about', 'HomeController@about');

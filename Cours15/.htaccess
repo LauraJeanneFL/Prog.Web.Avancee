@@ -1,6 +1,6 @@
 RewriteEngine On
 
-RewriteBase /ProgWebAvancee/Cours15/
+RewriteBase /ProgWebAvancee/Cours15/public/
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.*)$ index.php [L]

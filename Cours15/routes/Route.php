@@ -19,9 +19,7 @@ class Route{
         $method = $_SERVER['REQUEST_METHOD'];
        
         foreach(self::$routes as $route){
-            if($route['url'] ==  $urlPath && $route['method'] == $method ){
-                echo "URL Path: $urlPath<br>";
-                echo "Route Path: " . $route['url'] . "<br>";
+            if(BASE.$route['url'] ==  $urlPath && $route['method'] == $method ){
                 //echo BASE.$route['url'].' = '.$urlPath;
                 //echo $route['controller'];
                 $controllerSegments = explode('@',$route['controller']);
@@ -57,4 +55,3 @@ class Route{
         echo "404 Not found";
     } 
 }
-?>
