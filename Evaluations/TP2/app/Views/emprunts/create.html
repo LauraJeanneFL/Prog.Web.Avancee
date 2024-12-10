@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer un emprunt</title>
+</head>
+<body>
+    <h1>Créer un emprunt</h1>
+    <form method="POST" action="/emprunts/store">
+        <label for="nom_emprunteur">Nom de l'emprunteur
+            <input type="text" name="nom_emprunteur" required>
+        </label>
+
+        <label for="id_livre">ID du livre
+            <input type="number" name="id_livre" required>
+        </label>
+
+        <button type="submit">Enregistrer</button>
+    </form>
+</body>
+</html>

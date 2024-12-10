@@ -1,0 +1,20 @@
+<h1>Liste des auteurs</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Prénom</th>
+        <th>Nom</th>
+        <th>Actions</th>
+    </tr>
+    {% for auteur in auteurs %}
+        <tr>
+            <td>{{ auteur.id_auteur }}</td>
+            <td>{{ auteur.prenom }}</td>
+            <td>{{ auteur.nom }}</td>
+            <td>
+                <a href="/auteurs/edit/{{ auteur.id_auteur }}">Modifier</a>
+                <a href="/auteurs/delete/{{ auteur.id_auteur }}">Supprimer</a>
+            </td>
+        </tr>
+    {% endfor %}
+</table>

@@ -1,0 +1,18 @@
+<h1>Liste des genres</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Nom du genre</th>
+        <th>Actions</th>
+    </tr>
+    {% for genre in genres %}
+        <tr>
+            <td>{{ genre.id_genre }}</td>
+            <td>{{ genre.nom_genre }}</td>
+            <td>
+                <a href="/genres/edit/{{ genre.id_genre }}">Modifier</a>
+                <a href="/genres/delete/{{ genre.id_genre }}">Supprimer</a>
+            </td>
+        </tr>
+    {% endfor %}
+</table>

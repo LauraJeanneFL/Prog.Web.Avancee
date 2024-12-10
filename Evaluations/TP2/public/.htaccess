@@ -1,0 +1,9 @@
+Options -Indexes
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [L,QSA]
+
+# TEST TEMPORAIRE : Ajoutez une règle pour afficher un message
+RewriteRule ^test$ - [F,L]

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des emprunts</title>
+    <link rel="stylesheet" href="{{ asset }}css/style.css">
+</head>
+<body>
+    <h1>Liste des emprunts</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Livre</th>
+                <th>Nom de l'emprunteur</th>
+                <th>Date d'emprunt</th>
+                <th>Date de retour</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for emprunt in emprunts %}
+            <tr>
+                <td>{{ emprunt.id_emprunt }}</td>
+                <td>{{ emprunt.id_livre }}</td>
+                <td>{{ emprunt.nom_emprunteur }}</td>
+                <td>{{ emprunt.date_emprunt }}</td>
+                <td>{{ emprunt.date_retour }}</td>
+                <td>
+                    <a href="/emprunts/edit/{{ emprunt.id_emprunt }}">Modifier</a>
+                    <a href="/emprunts/delete/{{ emprunt.id_emprunt }}">Supprimer</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

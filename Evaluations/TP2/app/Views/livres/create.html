@@ -1,0 +1,14 @@
+
+<h1>Ajouter un nouveau livre</h1>
+<form method="POST" action="/livres/store">
+    <label for="titre">Titre :</label>
+    <input type="text" id="titre" name="titre" required>
+    
+    <label for="annee_publication">Année de publication :</label>
+    <input type="number" id="annee_publication" name="annee_publication" required>
+    
+    <label for="quantite_disponible">Quantité disponible :</label>
+    <input type="number" id="quantite_disponible" name="quantite_disponible" required>
+    
+    <button type="submit">Ajouter</button>
+</form>
